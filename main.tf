@@ -90,7 +90,7 @@ resource "aws_db_instance" "create_rds" {
 #######################################
 resource "aws_rds_cluster" "create_cluster_aurora" {
   count = var.type == "aurora" ? 1 : 0
-  # allocated_storage = 2
+ 
   database_name                       = var.default_db_name
   master_username                     = var.default_user_name
   master_password                     = var.default_password #max 41 chars
