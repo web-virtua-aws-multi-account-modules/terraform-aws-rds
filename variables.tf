@@ -250,9 +250,9 @@ variable "domain_iam_role_name" {
 }
 
 variable "final_snapshot_identifier" {
-  description = "The name of your final DB snapshot when this DB instance is deleted. Must be provided if skip_final_snapshot is set to false"
-  type        = bool
-  default     = false
+  description = "The name of your final DB snapshot when this DB instance is deleted."
+  type        = string
+  default     = null
 }
 
 variable "iam_database_authentication_enabled" {

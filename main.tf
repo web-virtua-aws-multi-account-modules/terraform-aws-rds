@@ -59,7 +59,7 @@ resource "aws_db_instance" "create_rds" {
   deletion_protection                   = var.deletion_protection
   domain                                = var.domain
   domain_iam_role_name                  = var.domain_iam_role_name
-  final_snapshot_identifier             = var.final_snapshot_identifier
+  final_snapshot_identifier             = var.final_snapshot_identifier != null ? var.final_snapshot_identifier : "${var.default_db_name}-final-snapshot"
   iam_database_authentication_enabled   = var.iam_database_authentication_enabled
   kms_key_id                            = var.kms_key_id
   maintenance_window                    = var.maintenance_window
@@ -112,7 +112,7 @@ resource "aws_rds_cluster" "create_cluster_aurora" {
   apply_immediately                   = var.apply_immediately
   copy_tags_to_snapshot               = var.copy_tags_to_snapshot
   deletion_protection                 = var.deletion_protection
-  final_snapshot_identifier           = var.final_snapshot_identifier
+  final_snapshot_identifier           = var.final_snapshot_identifier != null ? var.final_snapshot_identifier : "${var.default_db_name}-final-snapshot"
   iam_database_authentication_enabled = var.iam_database_authentication_enabled
   kms_key_id                          = var.kms_key_id
   preferred_maintenance_window        = var.maintenance_window

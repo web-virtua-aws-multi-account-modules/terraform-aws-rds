@@ -373,7 +373,7 @@ module "database_aurora_serverless_mysql" {
 | deletion_protection | `bool` | `false` | no | If the DB instance should have deletion protection enabled. The database can't be deleted when this value is set to true | `*`false <br> `*`true |
 | domain | `string` | `null` | no | The ID of the Directory Service Active Directory domain to create the instance in | `-` |
 | domain_iam_role_name | `string` | `null` | no | (Optional, but required if domain is provided) The name of the IAM role to be used when making API calls to the Directory Service | `-` |
-| final_snapshot_identifier | `bool` | `false` | no | The name of your final DB snapshot when this DB instance is deleted. Must be provided if skip_final_snapshot is set to false | `*`false <br> `*`true |
+| final_snapshot_identifier | `string` | `null` | no | The name of your final DB snapshot when this DB instance is deleted. | `-` |
 | iam_database_authentication_enabled | `bool` | `null` | no | Specifies whether mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled | `*`false <br> `*`true |
 | kms_key_id | `string` | `null` | no | The ARN for the KMS encryption key. If creating an encrypted replica, set this to the destination KMS ARN | `-` |
 | maintenance_window | `string` | `null` | no | The window to perform maintenance in. Syntax: ddd:hh24:mi-ddd:hh24:mi. Ex: Mon:00:00-Mon:03:00 | `-` |
